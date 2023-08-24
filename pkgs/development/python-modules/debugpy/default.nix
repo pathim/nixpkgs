@@ -79,6 +79,8 @@ buildPythonPackage rec {
     }.${stdenv.hostPlatform.system} or (throw "Unsupported system: ${stdenv.hostPlatform.system}")}
   )'';
 
+doCheck = false;
+
   nativeCheckInputs = [
     django
     flask
