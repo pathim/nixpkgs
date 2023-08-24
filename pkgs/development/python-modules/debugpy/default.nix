@@ -94,8 +94,8 @@ buildPythonPackage rec {
     # Scale default timeouts by a factor of 4 to avoid flaky builds
     # https://github.com/microsoft/debugpy/pull/1286 if merged would
     # allow us to disable the timeouts altogether
-    export DEBUGPY_PROCESS_SPAWN_TIMEOUT=60
-    export DEBUGPY_PROCESS_EXIT_TIMEOUT=20
+    export DEBUGPY_PROCESS_SPAWN_TIMEOUT=0
+    export DEBUGPY_PROCESS_EXIT_TIMEOUT=0
   '' + lib.optionalString (stdenv.isDarwin && stdenv.isAarch64) ''
     # https://github.com/python/cpython/issues/74570#issuecomment-1093748531
     export no_proxy='*';
